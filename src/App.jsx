@@ -754,7 +754,7 @@ const cardsData = [
   "Cibles": "Entrepreneurs, startups, entreprises en démarrage",
   "Couverture": "Nationale",
   "Siteweb": "https://www.bidaya.ma",
-  "content": "Bidaya est une initiative visant à soutenir les jeunes entrepreneurs au Maroc, en leur offrant des solutions de financement et un accompagnement personnalisé pour la création et le développement de leurs entreprises. Le programme se concentre sur le financement d'idées innovantes et la création de nouvelles entreprises.",
+  "content": "Bidaya est une initiative visant à soutenir les jeunes entrepreneurs au Maroc, en leur o  ffrant des solutions de financement et un accompagnement personnalisé pour la création et le développement de leurs entreprises. Le programme se concentre sur le financement d'idées innovantes et la création de nouvelles entreprises.",
   "image": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80",
   "icon": "Rocket",
   "Contributions": {
