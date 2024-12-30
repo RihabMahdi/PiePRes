@@ -5,6 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/PiePRes/',
+  build: {
+    outDir: 'docs', // Spécifie que les fichiers de build iront dans "docs"
+  },
 
 })
 
