@@ -6,7 +6,10 @@ export default defineConfig({
   plugins: [react()],
   base: '/PiePRes/',
   build: {
-    outDir: 'docs', // Spécifie que les fichiers de build iront dans "docs"
+    outDir: 'docs',
+    rollupOptions: {
+      external: ['html-docx-js'], // Mark html-docx-js as an external dependency
+    },
   },
 
 })

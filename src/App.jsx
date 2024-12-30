@@ -3,6 +3,7 @@ import React from 'react';
 // Import the icon components
 import { Cpu, Building, Users, Rocket, Lightbulb,CreditCard,CircleUserRound,Handshake,HandCoins  } from 'lucide-react'; // Import specific icons
 import './index.css'
+import { jsPDF } from 'jspdf';
 
 const cardsData = [
   {
@@ -406,6 +407,430 @@ const cardsData = [
     "Préparez les documents nécessaires pour la création d’entreprise ou l’investissement.",
     "Suivez les étapes d'accompagnement proposées par le CRI pour finaliser votre projet."
   ]
+},{
+  "title": "Dar Al Moukawil (Attijariwafa Bank)",
+  "Catégorie": "Entrepreneuriat et accompagnement",
+  "Services": "Formation en entrepreneuriat, soutien au développement des projets, mise en réseau, conseils en gestion d’entreprise",
+  "Type": "Service public/privé",
+  "Cibles": "Entrepreneurs débutants, PME, startups",
+  "Couverture": "Nationale",
+  "Siteweb": "https://www.daralmoukawil.com",
+  "content": "Dar Al Moukawil, une initiative de la Banque Attijariwafa, soutient les entrepreneurs marocains en leur offrant des formations, des conseils en gestion et un accompagnement dans la création et le développement de leur entreprise.",
+  "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80",
+  "icon": "Lightbulb",
+  "Contributions": {
+    "Formation et accompagnement :": [
+      "Formation gratuite en gestion d’entreprise et création de projets.",
+      "Accompagnement personnalisé pour la mise en œuvre des projets.",
+      "Séminaires et ateliers pratiques sur le marketing, la gestion financière, et le développement des affaires."
+    ],
+    "Soutien au financement :": [
+      "Conseils sur l'accès au financement pour les projets innovants.",
+      "Mise en relation avec des investisseurs potentiels."
+    ],
+    "Mise en réseau :": [
+      "Réseautage avec des entrepreneurs, mentors et experts du secteur.",
+      "Opportunités de partenariats avec d'autres entreprises."
+    ]
+  },
+  "Avantages": [
+    "Accompagnement gratuit et complet.",
+    "Formations pratiques et adaptées aux besoins des entrepreneurs.",
+    "Accès à un large réseau de professionnels et d’investisseurs.",
+    "Conseils en gestion d’entreprise pour assurer la pérennité des projets."
+  ],
+  "Inconvénients": [
+    "Accès limité aux entrepreneurs ayant déjà une certaine idée de leur projet.",
+    "Capacité d’accompagnement limitée pour les projets de grande envergure.",
+    "Peu adapté aux entreprises déjà bien établies."
+  ],
+  "CommentPostuler": [
+    "Visitez le site officiel : https://www.daralmoukawil.com",
+    "Créez un compte sur la plateforme et remplissez votre dossier de projet.",
+    "Participez aux formations proposées en ligne ou en présentiel.",
+    "Recevez un accompagnement personnalisé et accédez aux opportunités de financement."
+  ]
+},
+{
+  "title": "AMEE (Agence Marocaine pour l’Efficacité Énergétique)",
+  "Catégorie": "Environnement et énergie",
+  "Services": "Conseils en efficacité énergétique, formation, soutien aux projets d'énergie renouvelable et d'efficacité énergétique",
+  "Type": "Service public",
+  "Cibles": "Entrepreneurs, entreprises, collectivités locales, porteurs de projets dans les énergies renouvelables",
+  "Couverture": "Nationale",
+  "Siteweb": "https://www.amee.ma",
+  "content": "L'AMEE accompagne les entreprises et les porteurs de projets dans la mise en œuvre de solutions d'efficacité énergétique et de développement des énergies renouvelables. L'agence fournit des conseils techniques, des formations, et soutient l'accès à des financements pour les projets écologiques.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+  "icon": "Leaf",
+  "Contributions": {
+    "Soutien technique :": [
+      "Conseils sur les solutions d'efficacité énergétique pour les entreprises.",
+      "Audit énergétique pour identifier les opportunités de réduction des consommations d'énergie."
+    ],
+    "Formation et sensibilisation :": [
+      "Programmes de formation pour sensibiliser aux bonnes pratiques énergétiques.",
+      "Ateliers et séminaires pour les entreprises et les collectivités locales sur les enjeux de l'efficacité énergétique."
+    ],
+    "Accès au financement :": [
+      "Assistance dans la recherche de financements pour les projets d’efficacité énergétique.",
+      "Mise en relation avec des partenaires financiers pour soutenir les projets d'énergie verte."
+    ]
+  },
+  "Avantages": [
+    "Accompagnement gratuit pour les projets d'efficacité énergétique.",
+    "Accès à des ressources et outils techniques pour améliorer la performance énergétique.",
+    "Sensibilisation et formation sur les enjeux écologiques et énergétiques.",
+    "Aide à l'accès aux financements pour les projets d'énergie renouvelable."
+  ],
+  "Inconvénients": [
+    "Programmes souvent limités aux secteurs industriels et grandes entreprises.",
+    "Disponibilité des ressources et des financements limités pour les petites entreprises.",
+    "Processus administratif pouvant être complexe pour certaines démarches."
+  ],
+  "CommentPostuler": [
+    "Visitez le site officiel : https://www.amee.ma",
+    "Créez un compte sur la plateforme et soumettez votre projet.",
+    "Participez aux programmes de formation et aux ateliers proposés par l'AMEE.",
+    "Recevez un accompagnement technique et accédez aux financements disponibles."
+  ]
+},
+{
+  "title": "Réseau Entreprendre Maroc",
+  "Catégorie": "Entrepreneuriat et accompagnement",
+  "Services": "Accompagnement de créateurs d'entreprises, mentorat, soutien à la croissance des PME",
+  "Type": "Organisation privée",
+  "Cibles": "Créateurs d'entreprises, dirigeants de PME, startups",
+  "Couverture": "Nationale",
+  "Siteweb": "https://www.reseau-entreprendre.org/maroc",
+  "content": "Réseau Entreprendre Maroc est une organisation qui soutient les créateurs d'entreprises et les PME à travers du mentorat, des conseils en gestion, et un accompagnement personnalisé pour assurer la pérennité et la croissance des projets.",
+  "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+  "icon": "Users",
+  "Contributions": {
+    "Mentorat et accompagnement :": [
+      "Aide à la création et au développement des entreprises.",
+      "Mentorat avec des entrepreneurs expérimentés pour guider les créateurs d'entreprises."
+    ],
+    "Financement et partenariats :": [
+      "Accès à un réseau d'investisseurs pour le financement des projets.",
+      "Partenariats avec des entreprises et institutions pour favoriser la croissance."
+    ]
+  },
+  "Avantages": [
+    "Accompagnement gratuit et personnalisé par des mentors expérimentés.",
+    "Réseautage avec d'autres entrepreneurs et investisseurs.",
+    "Soutien aux entrepreneurs dans la gestion et la stratégie de croissance."
+  ],
+  "Inconvénients": [
+    "Accès limité aux projets sélectionnés par le réseau.",
+    "Certains types de projets peuvent ne pas correspondre aux critères du réseau."
+  ],
+  "CommentPostuler": [
+    "Visitez le site officiel : https://www.reseau-entreprendre.org/maroc",
+    "Créez un compte et soumettez votre projet.",
+    "Rencontrez un mentor pour une première session d’accompagnement.",
+    "Participez aux événements et ateliers organisés par le réseau."
+  ]
+},
+{
+  "title": "Tamwilcom",
+  "Catégorie": "Financement et entrepreneuriat",
+  "Services": "Financement de projets, garantie de crédits, soutien aux PME et startups",
+  "Type": "Service public",
+  "Cibles": "Entrepreneurs, startups, PME, porteurs de projets",
+  "Couverture": "Nationale",
+  "Siteweb": "https://www.tamwilcom.ma",
+  "content": "Tamwilcom est un organisme public marocain dédié à l'accompagnement des porteurs de projets à travers des financements, des garanties de crédits, et des solutions adaptées pour les entreprises de toute taille, en particulier les PME et les startups.",
+  "image": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80",
+  "icon": "Banknote",
+  "Contributions": {
+    "Financement :": [
+      "Prêts pour les créateurs d’entreprises et les PME.",
+      "Prêts à faible taux d'intérêt pour les projets innovants."
+    ],
+    "Garanties de crédits :": [
+      "Garanties pour faciliter l’obtention de crédits bancaires pour les projets.",
+      "Assurance des risques financiers pour les institutions financières."
+    ],
+    "Soutien aux PME et startups :": [
+      "Accompagnement dans l’obtention de financements adaptés.",
+      "Assistance dans la préparation des dossiers de financement."
+    ]
+  },
+  "Avantages": [
+    "Financement à taux compétitifs pour les projets en démarrage.",
+    "Facilité d’accès au crédit grâce aux garanties proposées.",
+    "Accompagnement personnalisé pour le développement des projets."
+  ],
+  "Inconvénients": [
+    "Critères de sélection pouvant être restrictifs.",
+    "Délai de traitement des demandes parfois long.",
+    "Peu adapté aux entreprises déjà bien établies ou de grande envergure."
+  ],
+  "CommentPostuler": [
+    "Visitez le site officiel : https://www.tamwilcom.ma",
+    "Soumettez votre dossier de financement en ligne.",
+    "Préparez un business plan détaillé et les documents nécessaires.",
+    "Attendez la validation de votre demande avant de recevoir le financement."
+  ]
+},
+{
+  "title": "AMDI (Agence Marocaine de Développement des Investissements)",
+  "Catégorie": "Investissement et développement économique",
+  "Services": "Promotion des investissements, accompagnement des investisseurs, soutien à l'implantation d'entreprises",
+  "Type": "Service public",
+  "Cibles": "Investisseurs nationaux et étrangers, entreprises souhaitant s'implanter au Maroc",
+  "Couverture": "Nationale et internationale",
+  "Siteweb": "https://www.amdi.ma",
+  "content": "L'AMDI soutient le développement des investissements au Maroc en offrant des services d'accompagnement aux investisseurs nationaux et étrangers, en facilitant les démarches administratives et en offrant des conseils pour les projets d'implantation d'entreprises.",
+  "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
+  "icon": "Building",
+  "Contributions": {
+    "Promotion des investissements :": [
+      "Mise en place de campagnes de promotion pour attirer les investisseurs.",
+      "Identification des secteurs d'investissement à fort potentiel.",
+      "Organisation de rencontres et de salons pour mettre en relation investisseurs et porteurs de projets."
+    ],
+    "Accompagnement personnalisé :": [
+      "Assistance dans les démarches administratives et juridiques pour l'implantation d'entreprises.",
+      "Conseils sur les opportunités économiques et les conditions d'investissement au Maroc."
+    ],
+    "Soutien à l'implantation :": [
+      "Aide à la recherche de sites d'implantation pour les entreprises.",
+      "Assistance dans l'obtention de financements et de partenariats."
+    ]
+  },
+  "Avantages": [
+    "Accompagnement complet pour les investisseurs nationaux et étrangers.",
+    "Facilitation des démarches administratives et juridiques.",
+    "Conseils stratégiques pour le choix des secteurs d'investissement.",
+    "Accès à des informations sur les opportunités d'investissement locales."
+  ],
+  "Inconvénients": [
+    "Peut être complexe pour les investisseurs novices dans le marché marocain.",
+    "Services et accompagnements souvent centrés sur les projets à fort potentiel économique.",
+    "Accès limité aux informations spécifiques à certains secteurs pour les petites entreprises."
+  ],
+  "CommentPostuler": [
+    "Visitez le site officiel : https://www.amdi.ma",
+    "Soumettez votre demande d'accompagnement en ligne.",
+    "Participez aux événements organisés par l'AMDI pour découvrir les opportunités d'investissement.",
+    "Recevez un accompagnement personnalisé et des conseils sur l'implantation de votre entreprise."
+  ]
+},
+{
+  "title": "SwitchMed",
+  "Catégorie": "Environnement et développement durable",
+  "Services": "Soutien aux entreprises vertes, financement, développement de solutions durables",
+  "Type": "Programme international",
+  "Cibles": "Entrepreneurs, startups, entreprises dans le domaine de l'économie verte et durable",
+  "Couverture": "Régionale (Méditerranée et Afrique du Nord)",
+  "Siteweb": "https://www.switchmed.eu",
+  "content": "SwitchMed est un programme qui soutient les entreprises et startups dans la région Méditerranéenne et Afrique du Nord en développant des solutions durables, notamment dans les domaines de l’économie circulaire et des énergies renouvelables. Il offre des services de financement, de formation et d'accompagnement pour favoriser la transition vers des modèles économiques plus verts.",
+  "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80",
+  "icon": "Recycle",
+  "Contributions": {
+    "Soutien à l'entrepreneuriat durable :": [
+      "Accompagnement des startups et PME pour adopter des solutions durables.",
+      "Aide à la mise en œuvre de projets dans l'économie circulaire et les énergies renouvelables."
+    ],
+    "Financement et accès à des ressources :": [
+      "Mise en relation avec des investisseurs et des partenaires financiers.",
+      "Accès à des fonds pour des projets d'entreprises écologiques."
+    ],
+    "Formation et développement des compétences :": [
+      "Programmes de formation pour les entrepreneurs sur la durabilité et l'innovation verte.",
+      "Ateliers pratiques sur la gestion des projets écologiques et l'économie circulaire."
+    ]
+  },
+  "Avantages": [
+    "Accès à des financements pour des projets écologiques.",
+    "Soutien dans le développement de solutions durables pour les entreprises.",
+    "Réseautage avec d'autres entrepreneurs et investisseurs dans le domaine de la durabilité.",
+    "Formations et ressources adaptées aux besoins des entreprises vertes."
+  ],
+  "Inconvénients": [
+    "Disponible principalement pour les projets dans la région Méditerranéenne et Afrique du Nord.",
+    "Accès aux financements peut être compétitif en fonction des projets.",
+    "Certaines conditions d'éligibilité peuvent exclure des projets plus petits ou en phase de démarrage."
+  ],
+  "CommentPostuler": [
+    "Visitez le site officiel : https://www.switchmed.eu",
+    "Créez un profil sur la plateforme pour soumettre votre projet.",
+    "Participez aux événements et programmes de formation proposés par SwitchMed.",
+    "Recevez un accompagnement et accédez à des financements pour développer des solutions durables."
+  ]
+},
+{
+  "title": "Caisse de Dépôt et de Gestion (CDG)",
+  "Catégorie": "Financement et gestion des investissements",
+  "Services": "Gestion des fonds de retraite, financement de projets publics, investissements immobiliers",
+  "Type": "Institution publique",
+  "Cibles": "Particuliers, entreprises, investisseurs, collectivités publiques",
+  "Couverture": "Nationale",
+  "Siteweb": "https://www.cdg.ma",
+  "content": "La Caisse de Dépôt et de Gestion (CDG) est une institution publique marocaine qui gère des fonds de retraite et des investissements dans divers secteurs, notamment l'immobilier, les infrastructures, et les projets de développement économique. Elle joue un rôle crucial dans la gestion des épargnes nationales et le financement de projets d'envergure.",
+  "image": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80",
+  "icon": "Building",
+  "Contributions": {
+    "Gestion des fonds de retraite :": [
+      "Sécurisation des épargnes des particuliers et des entreprises.",
+      "Mise en place de solutions d'investissement pour les fonds de retraite."
+    ],
+    "Financement des projets publics :": [
+      "Soutien au financement des projets d'infrastructure et de développement économique.",
+      "Partenariats avec des institutions publiques et privées pour la réalisation de projets nationaux."
+    ],
+    "Investissements immobiliers :": [
+      "Gestion et développement de projets immobiliers pour le secteur public.",
+      "Investissements dans des projets immobiliers à vocation sociale et économique."
+    ]
+  },
+  "Avantages": [
+    "Rôle clé dans le financement des projets publics et privés au Maroc.",
+    "Gestion professionnelle des fonds de retraite pour une sécurité accrue.",
+    "Engagement dans des projets à fort impact économique et social.",
+    "Accès à des financements pour les projets d'infrastructure à long terme."
+  ],
+  "Inconvénients": [
+    "Peut être difficile d'accès pour les petites entreprises à la recherche de financements.",
+    "Processus de demande de financement parfois complexe et long.",
+    "Accès limité pour les projets en dehors des secteurs traditionnels soutenus par la CDG."
+  ],
+  "CommentPostuler": [
+    "Visitez le site officiel : https://www.cdg.ma",
+    "Soumettez votre projet via la plateforme dédiée.",
+    "Prenez contact avec un conseiller pour discuter des opportunités de financement.",
+    "Préparez les documents nécessaires pour la demande de financement ou d'investissement."
+  ]
+},
+{
+  "title": "Maroc Innovation",
+  "Catégorie": "Innovation et soutien à l'entrepreneuriat",
+  "Services": "Soutien à l'innovation, financement de projets de recherche et développement, accompagnement des startups innovantes",
+  "Type": "Institution publique",
+  "Cibles": "Entrepreneurs, startups, entreprises innovantes, chercheurs",
+  "Couverture": "Nationale",
+  "Siteweb": "http://www.marocinnovation.ma",
+  "content": "Maroc Innovation est une initiative publique dédiée à promouvoir l'innovation et la recherche-développement au Maroc. Elle soutient les entrepreneurs et les entreprises innovantes par le biais de financements, de subventions, et d'accompagnement pour le développement de nouvelles technologies et solutions innovantes.",
+  "image": "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1200&q=80",
+  "icon": "Innovation",
+  "Contributions": {
+    "Soutien à l'innovation :": [
+      "Aide à la conception et au développement de nouveaux produits et technologies.",
+      "Financement pour les projets de recherche et d'innovation."
+    ],
+    "Accompagnement des startups :": [
+      "Soutien personnalisé pour le développement de projets innovants.",
+      "Accès à des ressources et à un réseau d'experts dans le domaine de l'innovation."
+    ],
+    "Financement et subventions :": [
+      "Accès à des subventions et des prêts pour financer les projets de R&D.",
+      "Partenariats avec des institutions financières et des investisseurs pour soutenir l'innovation."
+    ]
+  },
+  "Avantages": [
+    "Soutien financier pour les projets de recherche et d'innovation.",
+    "Accompagnement personnalisé pour les startups et les entreprises innovantes.",
+    "Accès à un réseau de partenaires et d'experts dans le domaine de l'innovation.",
+    "Facilitation de la création et du développement de nouvelles technologies."
+  ],
+  "Inconvénients": [
+    "Processus de sélection des projets assez compétitif.",
+    "Peu adapté aux projets qui ne sont pas orientés vers l'innovation technologique.",
+    "Certaines démarches administratives peuvent être complexes."
+  ],
+  "CommentPostuler": [
+    "Visitez le site officiel : http://www.marocinnovation.ma",
+    "Soumettez votre projet d'innovation ou de R&D en ligne.",
+    "Participez aux événements et programmes organisés pour découvrir les opportunités de financement.",
+    "Recevez un accompagnement personnalisé pour faire avancer votre projet innovant."
+  ]
+},
+{
+  "title": "Bidaya",
+  "Catégorie": "Entrepreneuriat et financement",
+  "Services": "Soutien aux startups et aux projets entrepreneuriaux, financement, accompagnement au développement",
+  "Type": "Organisation privée-public",
+  "Cibles": "Entrepreneurs, startups, entreprises en démarrage",
+  "Couverture": "Nationale",
+  "Siteweb": "https://www.bidaya.ma",
+  "content": "Bidaya est une initiative visant à soutenir les jeunes entrepreneurs au Maroc, en leur offrant des solutions de financement et un accompagnement personnalisé pour la création et le développement de leurs entreprises. Le programme se concentre sur le financement d'idées innovantes et la création de nouvelles entreprises.",
+  "image": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80",
+  "icon": "Rocket",
+  "Contributions": {
+    "Accompagnement entrepreneurial :": [
+      "Mentorat et conseils personnalisés pour le développement des projets.",
+      "Ateliers et formations pour renforcer les compétences entrepreneuriales."
+    ],
+    "Financement des projets :": [
+      "Accès à des prêts et subventions pour le financement des startups.",
+      "Partenariats avec des investisseurs pour soutenir la croissance des projets."
+    ],
+    "Mise en réseau :": [
+      "Mise en relation avec un réseau d'entrepreneurs et de partenaires financiers.",
+      "Opportunités de collaboration avec des entreprises locales et internationales."
+    ]
+  },
+  "Avantages": [
+    "Soutien personnalisé pour les projets entrepreneuriaux.",
+    "Financement adapté aux besoins des jeunes entrepreneurs.",
+    "Accompagnement au développement des compétences et du réseau.",
+    "Facilitation de l'accès aux ressources et aux partenariats."
+  ],
+  "Inconvénients": [
+    "Critères de sélection pouvant limiter l'accès à certains projets.",
+    "Le processus de demande de financement peut être long.",
+    "Moins d'impact pour les projets déjà bien établis ou de grande envergure."
+  ],
+  "CommentPostuler": [
+    "Visitez le site officiel : https://www.bidaya.ma",
+    "Créez un compte et soumettez votre projet.",
+    "Participez aux événements et formations proposées.",
+    "Recevez un accompagnement personnalisé pour développer votre entreprise."
+  ]
+},
+{
+  "title": "The Moroccan Association of Business Angels (AMBA)",
+  "Catégorie": "Investissement et soutien aux startups",
+  "Services": "Investissement dans des startups innovantes, mise en relation entre entrepreneurs et investisseurs, mentorat",
+  "Type": "Organisation privée",
+  "Cibles": "Entrepreneurs, startups, investisseurs",
+  "Couverture": "Nationale",
+  "Siteweb": "https://www.amba.ma",
+  "content": "L'Association Marocaine des Business Angels (AMBA) est une organisation qui facilite les investissements dans des startups innovantes en mettant en relation des entrepreneurs et des investisseurs privés. AMBA soutient les jeunes entreprises par des financements, des conseils, et un accompagnement pour leur développement.",
+  "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80",
+  "icon": "Handshake",
+  "Contributions": {
+    "Investissement dans les startups :": [
+      "Financement de projets innovants en échange d'une participation au capital.",
+      "Aide à la levée de fonds pour les entreprises en démarrage."
+    ],
+    "Mentorat et accompagnement :": [
+      "Conseils et soutien stratégique pour le développement des startups.",
+      "Mise à disposition d'un réseau d'experts et de professionnels."
+    ],
+    "Mise en réseau :": [
+      "Mise en relation entre entrepreneurs et investisseurs.",
+      "Accès à des événements, conférences et opportunités de collaboration."
+    ]
+  },
+  "Avantages": [
+    "Accès à un réseau d'investisseurs et d'experts dans le domaine entrepreneurial.",
+    "Financement pour les startups en phase de démarrage.",
+    "Soutien stratégique et opérationnel pour le développement des projets.",
+    "Accès à des opportunités de partenariats et de collaborations."
+  ],
+  "Inconvénients": [
+    "Critères de sélection stricts pour les projets d'investissement.",
+    "Processus de financement compétitif et parfois long.",
+    "Peu adapté aux projets en phase avancée ou déjà bien établis."
+  ],
+  "CommentPostuler": [
+    "Visitez le site officiel : https://www.amba.ma",
+    "Créez un compte et soumettez votre projet ou idée.",
+    "Participez aux événements et rencontres organisés par AMBA.",
+    "Recevez un accompagnement et des conseils sur le processus d'investissement."
+  ]
 }
 
 ];
@@ -423,6 +848,94 @@ const App = () => {
     setShowModal(false);
     setSelectedCard(null);
   };
+
+  const exportContentAsPDF = () => {
+    const doc = new jsPDF();
+    
+    // Define padding and margins (adjustable)
+    const padding = 5; // Padding for text inside content box
+    const margin = 5;  // Margin for the document (space from the edges)
+    const maxWidth = doc.internal.pageSize.width - margin * 2 - padding * 2; // Max width for text
+    let yOffset = margin + padding; // Start position for the content
+    
+    // Set font styles (match your modal)
+    doc.setFont('Helvetica', 'normal');  // Use the font you have in the modal
+    doc.setFontSize(15);  // Title size
+    doc.setTextColor(0, 102, 204); // Blue color for the title
+    
+    // Title
+    doc.text(selectedCard.title, margin, yOffset, { maxWidth: maxWidth });
+    yOffset += 20;
+    
+    // Content
+    doc.setFontSize(11);  // Content text size
+    doc.setTextColor(0, 0, 0); // Black color for content
+    doc.text(selectedCard.content, margin, yOffset, { maxWidth: maxWidth });
+    yOffset += 20;
+    
+    // Contributions Section
+    doc.setFontSize(11);  // Section header size
+    doc.setTextColor(0, 51, 102); // Dark blue for section headers
+    doc.text("Contributions à l'entrepreneuriat:", margin, yOffset, { maxWidth: maxWidth });
+    yOffset += 10;
+  
+    if (selectedCard.Contributions) {
+      Object.keys(selectedCard.Contributions).forEach((category) => {
+        doc.setFontSize(12);
+        doc.setTextColor(0, 102, 204); // Blue for category
+        doc.text(category, margin, yOffset, { maxWidth: maxWidth });
+        yOffset += 10;
+  
+        selectedCard.Contributions[category].forEach((contribution) => {
+          doc.setTextColor(0, 0, 0); // Black for each contribution
+          doc.text(`+ ${contribution}`, margin + 10, yOffset, { maxWidth: maxWidth - 10 });  // Indented text
+          yOffset += 10;
+        });
+      });
+    }
+  
+    // Avantages Section
+    doc.setFontSize(11);
+    doc.setTextColor(34, 139, 34); // Green for advantages
+    doc.text("Avantages:", margin, yOffset, { maxWidth: maxWidth });
+    yOffset += 10;
+    selectedCard.Avantages.forEach((adv) => {
+      doc.setTextColor(34, 139, 34); // Green for each advantage
+      doc.text(`• ${adv}`, margin + 10, yOffset, { maxWidth: maxWidth - 10 });  // Indented text
+      yOffset += 10;
+    });
+  
+    // Inconvénients Section
+    doc.setFontSize(11);
+    doc.setTextColor(255, 0, 0); // Red for disadvantages
+    doc.text("Inconvénients:", margin, yOffset, { maxWidth: maxWidth });
+    yOffset += 10;
+    selectedCard.Inconvénients.forEach((inc) => {
+      doc.setTextColor(255, 0, 0); // Red for each disadvantage
+      doc.text(`• ${inc}`, margin + 10, yOffset, { maxWidth: maxWidth - 10 });  // Indented text
+      yOffset += 10;
+    });
+  
+    // Comment Postuler Section
+    doc.setFontSize(11);
+    doc.setTextColor(0, 102, 204); // Blue for instructions
+    doc.text("Comment Postuler:", margin, yOffset, { maxWidth: maxWidth });
+    yOffset += 10;
+    selectedCard.CommentPostuler.forEach((step, index) => {
+      doc.setTextColor(0, 0, 0); // Black for each step
+      doc.text(`${index + 1}. ${step}`, margin + 10, yOffset, { maxWidth: maxWidth - 10 });  // Indented text
+      yOffset += 10;
+    });
+    
+    // Save the PDF with the same title as the selected card
+    doc.save(selectedCard.title + ".pdf");
+  };
+  
+  
+  
+  
+
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-8">
@@ -458,8 +971,8 @@ const App = () => {
       </div>
   
       {showModal && selectedCard && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4">
-          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-8 relative shadow-2xl">
+        <div id="modalContent" className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4">
+          <div   className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-8 relative shadow-2xl">
             <button
               className="absolute top-4 right-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition"
               onClick={handleCloseModal}
@@ -580,6 +1093,14 @@ const App = () => {
                   />
                 </svg>
               </a>
+            </div>
+            <div className="mt-4 text-end">
+              <button
+                onClick={exportContentAsPDF}
+                className="px-6 py-3 bg-green-600 text-white rounded-lg mr-4 hover:bg-blue-700"
+              >
+                Exporter en PDF
+              </button>
             </div>
           </div>
         </div>
